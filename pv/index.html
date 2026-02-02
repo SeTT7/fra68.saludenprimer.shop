@@ -171,16 +171,18 @@ setTimeout(function () {
 }, 1320000); // 22 minutos
 </script>
 <script>
-document.addEventListener('click', function (e) {
-  var btn = e.target.closest('vturb-anchor-button');
+document.addEventListener(
+  'click',
+  function (e) {
+    var link = e.target.closest('a[href*="pay.mycheckoutt.com"]');
+    if (!link) return;
 
-  if (!btn) return;
-
-  if (btn.getAttribute('content') === 'ACHETER MAINTENANT') {
     ttq.track('InitiateCheckout');
-  }
-});
+  },
+  true
+);
 </script>
+
 
 
 
@@ -188,6 +190,7 @@ document.addEventListener('click', function (e) {
 
 </body>
 </html>
+
 
 
 
